@@ -21,36 +21,36 @@ public class Libro {
         this.ejemplaresPrestados = ejemplaresPrestados;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
-
-    public void setEjemplares(int ejemplares) {
-        this.ejemplares = ejemplares;
-    }
-
-    public void setEjemplaresPrestados(int ejemplaresPrestados) {
-        this.ejemplaresPrestados = ejemplaresPrestados;
-    }
-
     public String getTitulo() {
         return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getAutor() {
         return autor;
     }
 
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
     public int getEjemplares() {
         return ejemplares;
     }
 
+    public void setEjemplares(int ejemplares) {
+        this.ejemplares = ejemplares;
+    }
+
     public int getEjemplaresPrestados() {
         return ejemplaresPrestados;
+    }
+
+    public void setEjemplaresPrestados(int ejemplaresPrestados) {
+        this.ejemplaresPrestados = ejemplaresPrestados;
     }
 
     public boolean prestar() {
@@ -62,15 +62,16 @@ public class Libro {
     }
 
     public boolean devolver() {
-        if (ejemplares > 0) {
-
+        if (ejemplaresPrestados > 0) {
             ejemplaresPrestados--;
             return true;
         }
         return false;
     }
 
+    @Override
     public String toString() {
-        return "Titulo:" + titulo + ",Autor:" + autor + "Ejemplares:" + ejemplares + "Ejemplares Prestados:" + ejemplaresPrestados;
+        return "Título: " + titulo + ", Autor: " + autor + ", Ejemplares: " + ejemplares
+                + ", Prestados: " + ejemplaresPrestados;
     }
 }
